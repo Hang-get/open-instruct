@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 - MILES standalone/training scoring drift between the configured tolerance and ten times that tolerance now warns and continues instead of stopping (defaults 0.001/0.01); this affects every run using the scoring-check path, including explicit tolerances (https://github.com/allenai/open-instruct/pull/2187).
 
 ### Added
+- Keep MILES pool delivery rollback independent of outstanding prompt metadata size; restore selection cursors and remove only newly reserved IDs after failure (https://github.com/allenai/open-instruct/pull/2187).
 - Update the complete-code client with jittered retries, cancellation of later batches/retries, and queue-inclusive deadlines (https://github.com/allenai/open-instruct/pull/2203).
 - Add opt-in MILES named pools assigned by source pool fields or row labels, with independent finite shuffle, uniform, weighted or exposure-balanced sampling, pool-scoped length-triggered replay, per-pool W&B attempts/training/coverage/token counters, low-success/truncation history, literal math-reference diagnostics, and a streaming historical replay-pool inventory (https://github.com/allenai/open-instruct/pull/2187).
 - Fix R1 format scoring with optional final-answer verifier dispatch while preserving existing math, code, and raw-response behavior (https://github.com/allenai/open-instruct/pull/2188).
